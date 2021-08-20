@@ -1,0 +1,32 @@
+{
+  "name": "mongodb-docker-crud",
+  "version": "1.0.0",
+  "description": "Creating simple crud project with nodejs using Docker &amp; MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -- -r esm -r dotenv/config src/shares/http/index.js",
+    "start": "pm2 start src/shares/http/index.js --watch --no-daemon --node-args=\"-r esm\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alandev2/mongodb-docker-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alandev2/mongodb-docker-crud/issues"
+  },
+  "homepage": "https://github.com/alandev2/mongodb-docker-crud#readme",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7",
+    "pm2": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.12"
+  }
+}
