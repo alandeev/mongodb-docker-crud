@@ -3,15 +3,12 @@ import listUsersService from "../services/list-users";
 
 const userController = {
   listUsers: async (req, res) => {
-    try{
-      const users = await listUsersService();
-      console.log(users)
-      return res.json(users)
-    }catch(error) {
-      console.log(error) 
-
-      return res.json(error)
+    const users = await listUsersService();
+    if(users.length === 0) {
+      throw new Error("Ola mundo")
     }
+    
+    return res.json(users)
   },
   addUser: async (req, res) => {
     const user = await createUserService(req.body);
